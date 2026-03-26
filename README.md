@@ -1,5 +1,5 @@
 # ZAMPP Stack
-(Apache + MySQL + PHP + phpMyAdmin)
+(Homebrew + Apache + MySQL + PHP + phpMyAdmin)
 
 The easiest way to set up and manage your local PHP web development environment.  
 Available for: macOS, Linux and Windows (WSL only).
