@@ -1,14 +1,15 @@
 # ZAMPP Stack
-## Apache + MySQL + PHP + phpMyAdmin
-The easiest way to set up and manage your local web development environment.
+(Apache + MySQL + PHP + phpMyAdmin)
 
-Available for: macOS, Linux and Windows (WSL only)
+The easiest way to set up and manage your local PHP web development environment.  
+Available for: macOS, Linux and Windows (WSL only).
 
-## How to install?
+## How to use?
 Paste this into a macOS Terminal or Linux shell prompt:
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/zatikbalazs/zampp/refs/heads/main/zampp.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/zatikbalazs/zampp/HEAD/zampp.sh)"
 ```
+Note: the zampp.sh script will never be downloaded or installed anywhere on your system. Only the software stack itself will be installed, if you decide to do so. To manage services, update or delete the stack, please re-run the above command in your terminal any time you want.
 
 ## What does ZAMPP do?
 ZAMPP installs and configures everything you need to start PHP web development on your machine:
@@ -35,4 +36,4 @@ ZAMPP installs and configures everything you need to start PHP web development o
 ZAMPP is a shell script that uses Homebrew under the hood.
 
 ## Is ZAMPP free?
-Yes, ZAMPP is a 100% free and open source project.
+Yes, ZAMPP is 100% free and open source.
