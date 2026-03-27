@@ -44,4 +44,4 @@ Yes, the ZAMPP Dashboard is 100% free and open source.
 ## Support & Contributions
 If you enjoy using ZAMPP, please give it a star on GitHub to help others find it.
 
-If you run into any errors or bugs, please let me know by opening an issue or sending a pull request. I'd love to hear your thoughts!
+If you run into any errors or bugs, please let me know by opening an [issue](https://github.com/zatikbalazs/zampp/issues) or sending a [pull request](https://github.com/zatikbalazs/zampp/pulls).
