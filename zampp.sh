@@ -25,22 +25,22 @@ printf "║      ███      ░███░░░░░███  ░██�
 printf "║    ████     █ ░███    ░███  ░███      ░███  ░███         ░███          ║\n"
 printf "║   ███████████ █████   █████ █████     █████ █████        █████         ║\n"
 printf "║  ░░░░░░░░░░░ ░░░░░   ░░░░░ ░░░░░     ░░░░░ ░░░░░        ░░░░░          ║\n"
-printf "║  ${CYAN}ZAMPP STACK v1.0.1                  www.github.com/zatikbalazs/zampp${RESET}  ║\n"
+printf "║  ${CYAN}ZAMPP DASHBOARD v1.0.2              www.github.com/zatikbalazs/zampp${RESET}  ║\n"
 printf "╚════════════════════════════════════════════════════════════════════════╝\n"
 
 printf "\n"
 
-printf "The ZAMPP stack:\n"
-printf "~~~~~~~~~~~~~~~~\n"
-printf "Homebrew ${CYAN}------>${RESET} "
+printf "Your Web Stack:\n"
+printf "~~~~~~~~~~~~~~~\n"
+printf "Homebrew ${CYAN}----->${RESET} "
 brew --version &> /dev/null && brew --version | awk '{print $2}' && HOMEBREW=1 || printf "${RED}not installed${RESET}\n"
-printf "Apache ${CYAN}-------->${RESET} "
+printf "Apache ${CYAN}------->${RESET} "
 brew list --versions httpd &> /dev/null && brew list --versions httpd | awk '{print $2}' && APACHE=1 || printf "${RED}not installed${RESET}\n"
-printf "MySQL ${CYAN}--------->${RESET} "
+printf "MySQL ${CYAN}-------->${RESET} "
 brew list --versions mysql &> /dev/null && brew list --versions mysql | awk '{print $2}' && MYSQL=1 || printf "${RED}not installed${RESET}\n"
-printf "PHP ${CYAN}----------->${RESET} "
+printf "PHP ${CYAN}---------->${RESET} "
 brew list --versions php &> /dev/null && brew list --versions php | awk '{print $2}' && PHP=1 || printf "${RED}not installed${RESET}\n"
-printf "phpMyAdmin ${CYAN}---->${RESET} "
+printf "phpMyAdmin ${CYAN}--->${RESET} "
 brew list --versions phpmyadmin &> /dev/null && brew list --versions phpmyadmin | awk '{print $2}' && PHPMYADMIN=1 || printf "${RED}not installed${RESET}\n"
 
 if [[ $HOMEBREW == 1 && $APACHE == 1 && $MYSQL == 1 && $PHP == 1 && $PHPMYADMIN == 1 ]]; then
@@ -68,12 +68,12 @@ fi
 
 printf "ZAMPP Commands:\n"
 printf "~~~~~~~~~~~~~~~\n"
-[[ $STACK == 0 ]] && printf "${CYAN}${UNDERLINE}I${RESET}${CYAN}nstall${RESET}  Install the ZAMPP stack.\n"
+[[ $STACK == 0 ]] && printf "${CYAN}${UNDERLINE}I${RESET}${CYAN}nstall${RESET}  Install the web stack.\n"
 [[ $STACK == 1 ]] && printf "${CYAN}${UNDERLINE}U${RESET}${CYAN}pdate${RESET}   Update all packages.\n"
-[[ $STACK == 1 ]] && printf "${CYAN}${UNDERLINE}R${RESET}${CYAN}estart${RESET}  Restart all ZAMPP stack services.\n"
-[[ $STACK == 1 ]] && printf "${CYAN}${UNDERLINE}S${RESET}${CYAN}top${RESET}     Stop all ZAMPP stack services.\n"
-[[ $STACK == 1 ]] && printf "${CYAN}DELETE${RESET}   Delete the entire ZAMPP stack.\n"
-printf "${CYAN}${UNDERLINE}Q${RESET}${CYAN}uit${RESET}     Quit this application.\n"
+[[ $STACK == 1 ]] && printf "${CYAN}${UNDERLINE}R${RESET}${CYAN}estart${RESET}  Restart all web stack services.\n"
+[[ $STACK == 1 ]] && printf "${CYAN}${UNDERLINE}S${RESET}${CYAN}top${RESET}     Stop all web stack services.\n"
+[[ $STACK == 1 ]] && printf "${CYAN}DELETE${RESET}   Delete the entire web stack.\n"
+printf "${CYAN}${UNDERLINE}Q${RESET}${CYAN}uit${RESET}     Quit the ZAMPP dashboard.\n"
 
 printf "\n"
 
@@ -162,7 +162,7 @@ EOF
             brew services start mysql
             brew services start php
 
-            [[ $HOMEBREW == 1 && $APACHE == 1 && $MYSQL == 1 && $PHP == 1 && $PHPMYADMIN == 1 ]] && printf "\n[${GREEN}  OK  ${RESET}]  ZAMPP stack is installed.\n" && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/zatikbalazs/zampp/HEAD/zampp.sh)" || printf "\n[${RED}  Error  ${RESET}]  ZAMPP stack is not installed.\n"
+            [[ $HOMEBREW == 1 && $APACHE == 1 && $MYSQL == 1 && $PHP == 1 && $PHPMYADMIN == 1 ]] && printf "\n[${GREEN}  OK  ${RESET}]  Web stack is installed.\n" && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/zatikbalazs/zampp/HEAD/zampp.sh)" || printf "\n[${RED}  Error  ${RESET}]  Web stack is not installed.\n"
             ;;
         [qQ]|[qQ]uit)
             printf "[${GREEN}  OK  ${RESET}]  Goodbye!\n"
@@ -174,16 +174,16 @@ EOF
 elif [[ $STACK == 1 ]]; then
     case "$command" in
         [uU]|[uU]pdate)
-            brew update && brew upgrade && brew autoremove && brew cleanup && printf "\n[${GREEN}  OK  ${RESET}]  Your ZAMPP stack is up to date.\n" || printf "\n[${RED}  Error  ${RESET}]  Update failed.\n"
+            brew update && brew upgrade && brew autoremove && brew cleanup && printf "\n[${GREEN}  OK  ${RESET}]  Your web stack is up to date.\n" || printf "\n[${RED}  Error  ${RESET}]  Update failed.\n"
             ;;
         [rR]|[rR]estart)
-            brew services restart httpd && brew services restart mysql && brew services restart php && printf "\n[${GREEN}  OK  ${RESET}]  Restarted all ZAMPP stack services.\n" || printf "\n[${RED}  Error  ${RESET}]  Failed to restart ZAMPP stack services.\n"
+            brew services restart httpd && brew services restart mysql && brew services restart php && printf "\n[${GREEN}  OK  ${RESET}]  Restarted all web stack services.\n" || printf "\n[${RED}  Error  ${RESET}]  Failed to restart web stack services.\n"
             ;;
         [sS]|[sS]top)
-            brew services stop httpd && brew services stop mysql && brew services stop php && printf "\n[${GREEN}  OK  ${RESET}]  Stopped all ZAMPP stack services.\n" || printf "\n[${RED}  Error  ${RESET}]  Failed to stop ZAMPP stack services.\n"
+            brew services stop httpd && brew services stop mysql && brew services stop php && printf "\n[${GREEN}  OK  ${RESET}]  Stopped all web stack services.\n" || printf "\n[${RED}  Error  ${RESET}]  Failed to stop web stack services.\n"
             ;;
         DELETE)
-            brew services stop httpd && brew services stop mysql && brew services stop php && brew uninstall httpd && brew uninstall mysql && brew uninstall php && brew uninstall phpmyadmin && brew autoremove && brew cleanup && rm -rf $BREW_PREFIX/etc/httpd/httpd.conf && printf "[${GREEN}  OK  ${RESET}]  Deleted file: $BREW_PREFIX/etc/httpd/httpd.conf\n" && rm -rf $BREW_PREFIX/etc/phpmyadmin.config.inc.php && printf "[${GREEN}  OK  ${RESET}]  Deleted file: $BREW_PREFIX/etc/phpmyadmin.config.inc.php\n" && printf "\n[${GREEN}  OK  ${RESET}]  ZAMPP stack is deleted.\n" || printf "\n[${RED}  Error  ${RESET}]  Failed to delete the ZAMPP stack.\n"
+            brew services stop httpd && brew services stop mysql && brew services stop php && brew uninstall httpd && brew uninstall mysql && brew uninstall php && brew uninstall phpmyadmin && brew autoremove && brew cleanup && rm -rf $BREW_PREFIX/etc/httpd/httpd.conf && printf "[${GREEN}  OK  ${RESET}]  Deleted file: $BREW_PREFIX/etc/httpd/httpd.conf\n" && rm -rf $BREW_PREFIX/etc/phpmyadmin.config.inc.php && printf "[${GREEN}  OK  ${RESET}]  Deleted file: $BREW_PREFIX/etc/phpmyadmin.config.inc.php\n" && printf "\n[${GREEN}  OK  ${RESET}]  Web stack is deleted.\n" || printf "\n[${RED}  Error  ${RESET}]  Failed to delete the web stack.\n"
             ;;
         [qQ]|[qQ]uit)
             printf "[${GREEN}  OK  ${RESET}]  Active services keep running.\n"
