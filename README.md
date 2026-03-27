@@ -1,13 +1,12 @@
 # ZAMPP Dashboard
-Get your local PHP web stack up and running with a single command! No need to install a desktop application.  
-Available for: macOS, Linux and Windows (WSL only).
+Launch your local PHP web stack with a single command. > Enjoy a full development environment without the bloat of a desktop application. Available for: macOS, Linux and Windows (WSL only).
 
 ## How to use?
 Paste this into a macOS Terminal or Linux shell prompt:
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/zatikbalazs/zampp/HEAD/zampp.sh)"
 ```
-__Cool stuff: the ZAMPP Dashboard will never get installed anywhere on your system. Only the web stack will be installed, if you decide to do so. To manage services, update or delete the web stack, please re-run the command in your terminal anytime you wish.__
+__Zero footprint:__ The ZAMPP Dashboard runs entirely in-memory and never installs itself on your machine. Only the web stack is added if you choose to install it. To manage services, update, or uninstall the stack, simply re-run the command in your terminal at any time.
 
 ## What does the ZAMPP Dashboard do?
 It lets you install and manage (update, restart, delete) your local PHP web stack.
@@ -37,7 +36,12 @@ The ZAMPP Dashboard installs and configures everything you need to start PHP web
 - starts the php service
 
 ## How does the ZAMPP Dashboard work?
-The ZAMPP Dashboard is a shell script that uses Homebrew under the hood. It gets called directly from Github and doesn't get installed anywhere on your system. Only your web stack will be installed once you deliberately decide to do so.
+The ZAMPP Dashboard is a shell script powered by Homebrew. It runs directly from GitHub and leaves no footprint on your system. Your web stack is only installed once you explicitly choose to do so.
 
 ## Is the ZAMPP Dashboard free?
 Yes, the ZAMPP Dashboard is 100% free and open source.
+
+## Support & Contributions
+If you enjoy using ZAMPP, please give it a star on GitHub to help others find it.
+
+If you run into any errors or bugs, please let me know by opening an issue or sending a pull request. I'd love to hear your thoughts!
