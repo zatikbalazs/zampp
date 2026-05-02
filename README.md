@@ -1,5 +1,5 @@
 # ZAMPP Dashboard
-Launch your local PHP web stack with a single command. > Enjoy a full development environment without the bloat of a desktop application. Available for: macOS, Linux and Windows (WSL only).
+Launch your local PHP web stack with a single command. > Enjoy a full development environment without the bloat of a desktop application. Currently available for macOS (Apple Silicon) only. Windows and Linux versions are in the works.
 
 ## How to use?
 Paste this into a macOS Terminal or Linux shell prompt:
